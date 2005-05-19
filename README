@@ -1,0 +1,65 @@
+Data::RandomPerson - Generate people data to populate databases
+
+This document refers to version 0.1 of Data::RandomPerson, released May 13th, 2005
+
+I had the need to create some random data for a demo database, this was to include
+lots of fake client data. So as a way of not actually doing the job but working
+quite hard I wrote this code to do the work for me.
+
+I looked around and found some data to mase my male, female and last names on 
+an used that to pick from. Gender and age allows a title to be picked, no one 
+has the title Dr under the age of 26 nor are girls under the age of 16 called 
+anything but Miss.
+
+If you want to use your own name lists look at Data::RandomPerson::Names::Male
+and create your own class which you can pass in as part of the new() method on
+Data::RandomPerson. Just look in the pod.
+
+If you want to change the proabilities for gender (50:50 at present) or the
+age distribution you will need to subclass Data::RandomPerson and supply
+your own methods. Titles can be similarly changed although I have yet to 
+find a source of data giving the titles by gender by age to make a more
+realistic spread.
+
+I have some other sources of data that I am looking into converting for
+use with this module.
+
+INSTALLATION
+
+ % perl Makefile.PL
+ % make
+ % make test
+ % sudo make install
+
+TEST FAILURES
+
+The tests are there to make sure that I have broken nothing when I
+fiddle with the code and will teach you very little about how to use
+the code. 
+
+TO DO
+
+Pretty much finished, unless there are some 'must have' features
+
+BUGS
+
+None so far
+
+REQUIREMENTS
+
+* Developed under 5.6.1 but should work on anything 5+.
+* Written completely in Perl. XS is not required.
+
+AUTHOR
+
+Peter Hickman <peterhi@ntlworld.com>
+
+Copyright (c) 2005, Peter Hickman. All rights reserved.
+
+This module is free software. It may be used, redistributed and/or 
+modified under the same terms as Perl itself.
+
+CHANGES IN THIS RELEASE
+
+V0.1:
+      - First release to CPAN

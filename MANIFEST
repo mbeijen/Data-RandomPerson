@@ -1,0 +1,15 @@
+lib/Data/RandomPerson/Choice.pm
+lib/Data/RandomPerson/Names.pm
+lib/Data/RandomPerson/Names/Female.pm
+lib/Data/RandomPerson/Names/Last.pm
+lib/Data/RandomPerson/Names/Male.pm
+lib/Data/RandomPerson.pm
+Makefile.PL
+MANIFEST
+META.yml
+README
+t/choice.t
+t/names_female.t
+t/names_last.t
+t/names_male.t
+t/person.t
