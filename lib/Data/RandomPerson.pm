@@ -8,7 +8,7 @@ use warnings;
 use Date::Calc qw/Days_in_Month/;
 use Data::RandomPerson::Choice;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 sub new {
     my ( $class, %args ) = @_;
@@ -158,7 +158,7 @@ Data::RandomPerson - Create random people
 
 =head1 VERSION
 
-This document refers to version 0.1 of Data::RandomPerson, released May 13th, 2005
+This document refers to version 0.2 of Data::RandomPerson, released May 20th, 2005
 
 =head1 SYNOPSIS
 

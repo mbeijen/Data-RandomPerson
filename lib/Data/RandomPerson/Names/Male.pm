@@ -1,4 +1,4 @@
-# $Id: Male.pm,v 1.4 2005/05/16 20:29:44 peterhickman Exp $
+# $Id: Male.pm,v 1.5 2005/05/20 12:03:51 peterhickman Exp $
 
 package Data::RandomPerson::Names::Male;
 
@@ -332,11 +332,11 @@ sub new {
 __END__
 =head1 NAME
 
-Data::RandomPerson::Names::Male - A list of female names from some census data
+Data::RandomPerson::Names::Male - A list of male names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.1 of Data::RandomPerson::Names::Male, released May 13th, 2005
+This document refers to version 0.2 of Data::RandomPerson::Names::Male, released May 20th, 2005
 
 =head1 SYNOPSIS
 
@@ -350,7 +350,7 @@ This document refers to version 0.1 of Data::RandomPerson::Names::Male, released
 
 =head2 Overview
 
-Returns a random element from a list of female names culled from some census data.
+Returns a random element from a list of male names culled from some census data.
 
 =head2 Constructors and initialization
 
@@ -368,7 +368,7 @@ Create the Data::RandomPerson::Names::Male object.
 
 =item get( )
 
-Returns a random name form the list.
+Returns a random name from the list.
 
 =item size( )
 

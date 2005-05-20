@@ -1,4 +1,4 @@
-# $Id: Female.pm,v 1.4 2005/05/16 20:29:43 peterhickman Exp $
+# $Id: Female.pm,v 1.5 2005/05/20 12:03:50 peterhickman Exp $
 
 package Data::RandomPerson::Names::Female;
 
@@ -1017,7 +1017,7 @@ Data::RandomPerson::Names::Female - A list of female names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.1 of Data::RandomPerson::Names::Female, released May 13th, 2005
+This document refers to version 0.2 of Data::RandomPerson::Names::Female, released May 20th, 2005
 
 =head1 SYNOPSIS
 
@@ -1049,7 +1049,7 @@ Create the Data::RandomPerson::Names::Female object.
 
 =item get( )
 
-Returns a random name form the list.
+Returns a random name from the list.
 
 =item size( )
 

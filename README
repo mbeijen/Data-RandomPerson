@@ -1,6 +1,6 @@
 Data::RandomPerson - Generate people data to populate databases
 
-This document refers to version 0.1 of Data::RandomPerson, released May 13th, 2005
+This document refers to version 0.2 of Data::RandomPerson, released May 20th, 2005
 
 I had the need to create some random data for a demo database, this was to include
 lots of fake client data. So as a way of not actually doing the job but working
@@ -63,3 +63,6 @@ CHANGES IN THIS RELEASE
 
 V0.1:
       - First release to CPAN
+
+V0.2:
+	  - Spelling errors in the POD
