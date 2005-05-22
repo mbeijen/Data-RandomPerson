@@ -1,4 +1,4 @@
-# $Id: Choice.pm,v 1.4 2005/05/16 20:09:04 peterhickman Exp $
+# $Id: Choice.pm,v 1.6 2005/05/22 17:03:21 peterhickman Exp $
 
 package Data::RandomPerson::Choice;
 
@@ -51,7 +51,7 @@ Data::RandomPerson::Choice - Select an element from a list in proportion
 
 =head1 VERSION
 
-This document refers to version 0.2 of Data::RandomPerson::Choice, released May 20th, 2005
+This document refers to version 0.3 of Data::RandomPerson::Choice, released May 22nd, 2005
 
 =head1 SYNOPSIS
 

@@ -1,4 +1,4 @@
-# $Id: Last.pm,v 1.5 2005/05/20 12:03:50 peterhickman Exp $
+# $Id: Last.pm,v 1.8 2005/05/22 17:02:29 peterhickman Exp $
 
 package Data::RandomPerson::Names::Last;
 
@@ -22231,7 +22231,7 @@ Data::RandomPerson::Names::Last - A list of last names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.2 of Data::RandomPerson::Names::Last, released May 20th, 2005
+This document refers to version 0.3 of Data::RandomPerson::Names::Last, released May 22nd, 2005
 
 =head1 SYNOPSIS
 

@@ -1,4 +1,4 @@
-# $Id: Female.pm,v 1.5 2005/05/20 12:03:50 peterhickman Exp $
+# $Id: Female.pm,v 1.8 2005/05/22 17:02:28 peterhickman Exp $
 
 package Data::RandomPerson::Names::Female;
 
@@ -1017,7 +1017,7 @@ Data::RandomPerson::Names::Female - A list of female names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.2 of Data::RandomPerson::Names::Female, released May 20th, 2005
+This document refers to version 0.3 of Data::RandomPerson::Names::Female, released May 22nd, 2005
 
 =head1 SYNOPSIS
 

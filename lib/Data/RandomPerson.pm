@@ -1,4 +1,4 @@
-# $Id: RandomPerson.pm,v 1.6 2005/05/16 20:09:04 peterhickman Exp $
+# $Id: RandomPerson.pm,v 1.9 2005/05/22 17:03:39 peterhickman Exp $
 
 package Data::RandomPerson;
 
@@ -8,7 +8,7 @@ use warnings;
 use Date::Calc qw/Days_in_Month/;
 use Data::RandomPerson::Choice;
 
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 sub new {
     my ( $class, %args ) = @_;
@@ -158,7 +158,7 @@ Data::RandomPerson - Create random people
 
 =head1 VERSION
 
-This document refers to version 0.2 of Data::RandomPerson, released May 20th, 2005
+This document refers to version 0.3 of Data::RandomPerson, released May 20th, 2005
 
 =head1 SYNOPSIS
 
@@ -299,6 +299,118 @@ A list of last names from census data
 =item Data::RandomPerson::Names::Male
 
 A list of male first names from census data
+
+=item Data::RandomPerson::Names::AncientGreekFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::AncientGreekMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ArabicFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ArabicLast
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ArabicMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::BasqueFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::BasqueMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::CelticFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::CelticMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::EnglishFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::EnglishLast
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::EnglishMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::HindiFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::HindiMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::JapaneseFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::JapaneseMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::LatvianFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::LatvianMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ModernGreekFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ModernGreekLast
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ModernGreekMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::SpanishFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::SpanishLast
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::SpanishMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ThaiFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::ThaiMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::VikingFemale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
+
+=item Data::RandomPerson::Names::VikingMale
+
+Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =back
 

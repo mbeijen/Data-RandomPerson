@@ -1,4 +1,4 @@
-# $Id: Male.pm,v 1.5 2005/05/20 12:03:51 peterhickman Exp $
+# $Id: Male.pm,v 1.8 2005/05/22 17:02:30 peterhickman Exp $
 
 package Data::RandomPerson::Names::Male;
 
@@ -336,7 +336,7 @@ Data::RandomPerson::Names::Male - A list of male names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.2 of Data::RandomPerson::Names::Male, released May 20th, 2005
+This document refers to version 0.3 of Data::RandomPerson::Names::Male, released May 22nd, 2005
 
 =head1 SYNOPSIS
 
