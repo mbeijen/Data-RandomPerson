@@ -76,3 +76,6 @@ V0.2:
 V0.3
       - Added loads of new name data from Chris Pound's language machines
         page at http://www.ruf.rice.edu/~pound/#scripts
+
+V0.4
+	  - Just added a load of tests

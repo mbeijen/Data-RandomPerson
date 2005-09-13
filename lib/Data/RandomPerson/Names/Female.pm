@@ -1017,7 +1017,7 @@ Data::RandomPerson::Names::Female - A list of female names from some census data
 
 =head1 VERSION
 
-This document refers to version 0.3 of Data::RandomPerson::Names::Female, released May 22nd, 2005
+This document refers to version 0.4 of Data::RandomPerson::Names::Female, released Sept 13th, 2005
 
 =head1 SYNOPSIS
 

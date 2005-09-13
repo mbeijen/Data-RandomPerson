@@ -178,7 +178,7 @@ Data::RandomPerson::Names::VikingMale - A list of male names
 
 =head1 VERSION
 
-This document refers to version 0.3 of Data::RandomPerson::Names::VikingMale, released May 22nd, 2005
+This document refers to version 0.4 of Data::RandomPerson::Names::VikingMale, released Sept 13th, 2005
 
 =head1 SYNOPSIS
 

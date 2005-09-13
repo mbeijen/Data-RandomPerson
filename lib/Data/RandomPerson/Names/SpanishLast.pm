@@ -979,7 +979,7 @@ Data::RandomPerson::Names::SpanishLast - A list of last names
 
 =head1 VERSION
 
-This document refers to version 0.3 of Data::RandomPerson::Names::SpanishLast, released May 22nd, 2005
+This document refers to version 0.4 of Data::RandomPerson::Names::SpanishLast, released Sept 13th, 2005
 
 =head1 SYNOPSIS
 

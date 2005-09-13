@@ -91,7 +91,7 @@ Data::RandomPerson::Names::VikingFemale - A list of female names
 
 =head1 VERSION
 
-This document refers to version 0.3 of Data::RandomPerson::Names::VikingFemale, released May 22nd, 2005
+This document refers to version 0.4 of Data::RandomPerson::Names::VikingFemale, released Sept 13th, 2005
 
 =head1 SYNOPSIS
 
