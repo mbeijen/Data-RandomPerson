@@ -5,10 +5,10 @@ package Data::RandomPerson;
 use strict;
 use warnings;
 
-use Date::Calc qw/Days_in_Month/;
+use Data::Random qw(rand_date);
 use Data::RandomPerson::Choice;
 
-our $VERSION = '0.4';
+our $VERSION = '0.50';
 
 sub new {
     my ( $class, %args ) = @_;
@@ -120,11 +120,10 @@ sub _pick_firstname {
 sub _pick_dob {
     my ($self) = @_;
 
-    my $year  = ( localtime() )[5] + 1900 - $self->{age};
-    my $month = int( rand() * 12 ) + 1;
-    my $day   = int( rand() * Days_in_Month( $year, $month ) ) + 1;
+    my $year = ( localtime() )[5] + 1900 - $self->{age};
+    my $dob  = rand_date(min => "$year-01-01", max => "$year-12-31");
 
-    return sprintf( "%04d-%02d-%02d", $year, $month, $day );
+    return $dob;
 }
 
 sub create {
@@ -172,7 +171,7 @@ This document refers to version 0.4 of Data::RandomPerson, released Sept 13th, 2
 
 =head2 Overview
 
-Returns an object that can be used to create random people and return the data in a hash. The data 
+Returns an object that can be used to create random people and return the data in a hash. The data
 is a hash reference with the following keys:
 
 =over 4
@@ -187,7 +186,7 @@ The number of years old of the person
 
 =item dob
 
-The date of birth of the person based upon how old they are in the current year. The month and day portion are 
+The date of birth of the person based upon how old they are in the current year. The month and day portion are
 selected randomly.
 
 =item firstname
