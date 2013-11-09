@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id: person.t,v 1.4 2005/05/14 12:31:55 peterhickman Exp $
-
 use strict;
 use warnings;
 

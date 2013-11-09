@@ -1,5 +1,3 @@
-# $Id: ThaiMale.pm,v 1.3 2005/05/22 17:02:30 peterhickman Exp $
-
 package Data::RandomPerson::Names::ThaiMale;
 
 use strict;

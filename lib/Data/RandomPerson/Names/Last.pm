@@ -1,5 +1,3 @@
-# $Id: Last.pm,v 1.8 2005/05/22 17:02:29 peterhickman Exp $
-
 package Data::RandomPerson::Names::Last;
 
 use strict;

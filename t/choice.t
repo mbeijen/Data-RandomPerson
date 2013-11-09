@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id: choice.t,v 1.4 2005/05/16 20:09:06 peterhickman Exp $
-
 use strict;
 use warnings;
 

@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id: names_female.t,v 1.2 2005/05/13 21:10:50 peterhickman Exp $
-
 use strict;
 use warnings;
 

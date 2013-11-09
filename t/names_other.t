@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-# $Id: names_other.t,v 1.1 2005/05/22 16:57:15 peterhickman Exp $
-
 use strict;
 use warnings;
 
