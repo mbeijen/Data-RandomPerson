@@ -12,84 +12,23 @@ sub new {
 
     my $self = bless {}, $class;
 
-	$self->{choice} = Data::RandomPerson::Choice->new();
+    $self->{choice} = Data::RandomPerson::Choice->new();
 
-	$self->{choice}->add_list( qw/
-alfdis
-arnora
-asa
-asgerd
-asleif
-asta
-astrid
-aud
-bera
-bergljot
-bergthora
-dotta
-freydis
-gjaflaug
-grima
-grimhild
-groa
-gudrid
-gudrun
-gunnhild
-gyda
-halldis
-hallfrid
-hallgerd
-hallveig
-helga
-herdis
-hild
-hildigunn
-hlif
-hrefna
-hrodny
-ingibjorg
-ingigerd
-ingirid
-ingunn
-jorunn
-katla
-ragna
-ragnhild
-rannveig
-saeunn
-sigrid
-svala
-thjodhild
-thora
-thorbjorg
-thordis
-thorfinna
-thorgerd
-thorgunna
-thorhalla
-thorhild
-thorkatla
-thorunn
-thurid
-thyra
-unn
-valgerd
-vigdis
-			  / );
+    my @names = <DATA>;
+    close DATA;
+    chomp (@names);
+    $self->{choice}->add_list(@names);
 
     return $self;
 }
 
 1;
 
-__END__
+=pod
+
 =head1 NAME
 
 Data::RandomPerson::Names::VikingFemale - A list of female names
-
-=head1 VERSION
-
-This document refers to version 0.4 of Data::RandomPerson::Names::VikingFemale, released Sept 13th, 2005
 
 =head1 SYNOPSIS
 
@@ -159,3 +98,67 @@ Peter Hickman (peterhi@ntlworld.com)
 Copyright (c) 2005, Peter Hickman. All rights reserved. This module is
 free software. It may be used, redistributed and/or modified under the
 same terms as Perl itself.
+
+=cut
+
+__DATA__
+alfdis
+arnora
+asa
+asgerd
+asleif
+asta
+astrid
+aud
+bera
+bergljot
+bergthora
+dotta
+freydis
+gjaflaug
+grima
+grimhild
+groa
+gudrid
+gudrun
+gunnhild
+gyda
+halldis
+hallfrid
+hallgerd
+hallveig
+helga
+herdis
+hild
+hildigunn
+hlif
+hrefna
+hrodny
+ingibjorg
+ingigerd
+ingirid
+ingunn
+jorunn
+katla
+ragna
+ragnhild
+rannveig
+saeunn
+sigrid
+svala
+thjodhild
+thora
+thorbjorg
+thordis
+thorfinna
+thorgerd
+thorgunna
+thorhalla
+thorhild
+thorkatla
+thorunn
+thurid
+thyra
+unn
+valgerd
+vigdis

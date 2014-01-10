@@ -240,12 +240,9 @@ None
 
     Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/\#scripts
 
-
 # AUTHOR
 
 Peter Hickman (peterhi@ntlworld.com)
-Maintained by Michiel Beijen (michiel.beijen@gmail.com)
-
 
 # COPYRIGHT
 
