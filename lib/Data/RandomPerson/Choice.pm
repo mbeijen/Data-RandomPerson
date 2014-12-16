@@ -47,10 +47,6 @@ __END__
 
 Data::RandomPerson::Choice - Select an element from a list in proportion
 
-=head1 VERSION
-
-This document refers to version 0.4 of Data::RandomPerson::Choice, released Sept 13th, 2005
-
 =head1 SYNOPSIS
 
   use Data::RandomPerson::Choice;
@@ -112,10 +108,6 @@ Returns an element from the list.
 
 =back
 
-=head1 ENVIRONMENT
-
-Perl 5
-
 =head1 DIAGNOSTICS
 
 =over 4
@@ -126,24 +118,12 @@ This error will occur if you have called pick() before add() has been called.
 
 =back
 
-=head1 BUGS
-
-None so far
-
-=head1 FILES
-
-None
-
-=head1 SEE ALSO
-
-None
-
 =head1 AUTHOR
 
 Peter Hickman (peterhi@ntlworld.com)
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005, Peter Hickman. All rights reserved. This module is
+Copyright (c) 2005, Peter Hickman. This module is
 free software. It may be used, redistributed and/or modified under the
 same terms as Perl itself.

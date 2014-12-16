@@ -43,7 +43,7 @@ Data::RandomPerson::Names::AncientGreekFemale - A list of female names
 =head2 Overview
 
 Returns a random element from a list of female names culled from Chris Pound's language machines
-page at http://www.ruf.rice.edu/~pound/#scripts.
+page at L<http://generators.christopherpound.com/>.
 
 =head2 Constructors and initialization
 
@@ -75,7 +75,7 @@ Peter Hickman (peterhi@ntlworld.com)
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005, Peter Hickman. All rights reserved. This module is
+Copyright (c) 2005, Peter Hickman. This module is
 free software. It may be used, redistributed and/or modified under the
 same terms as Perl itself.
 

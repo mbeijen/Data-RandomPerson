@@ -151,11 +151,7 @@ __END__
 
 =head1 NAME
 
-Data::RandomPerson - Create random people
-
-=head1 VERSION
-
-This document refers to version 0.4 of Data::RandomPerson, released Sept 13th, 2005
+Data::RandomPerson - Create random person data.
 
 =head1 SYNOPSIS
 
@@ -169,8 +165,9 @@ This document refers to version 0.4 of Data::RandomPerson, released Sept 13th, 2
 
 =head2 Overview
 
-Returns an object that can be used to create random people and return the data in a hash. The data
-is a hash reference with the following keys:
+Returns an object that can be used to create random people and
+return the data in a hash. The data is a hash reference with the
+following keys:
 
 =over 4
 
@@ -180,21 +177,23 @@ This is either 'm' or 'f'
 
 =item age
 
-The number of years old of the person
+The age of the person, as an integer.
 
 =item dob
 
-The date of birth of the person based upon how old they are in the current year. The month and day portion are
-selected randomly.
+The date of birth of the person based upon how old they are in the
+current year. The month and day portion are selected randomly.
 
 =item firstname
 
-The person's first name based on their gender. The names are picked from Data::RandomPerson::Name::{Male,Female}
-unless other classes are supplied to the new method.
+The person's first name based on their gender. The names are picked
+from Data::RandomPerson::Name::{Male,Female} unless other classes are
+supplied to the new method.
 
 =item lastname
 
-The person's last name. The names are picked from Data::RandomPerson::Name::Last
+The person's last name. The names are picked from
+Data::RandomPerson::Name::Last
 unless another class is supplied to the new method.
 
 =item title
@@ -209,9 +208,12 @@ The person's title based on their age and gender.
 
 =item new( HASH )
 
-Create the Data::RandomPerson object. By default Data::RandomPerson::Names::{Male,Female,Last} are used to supply the
-male, female and last names. To pass in other classes to use you just put male => 'MyNames::Male' as arguments to the
-method. The three keys are 'male', 'female', and 'last'.
+Create the Data::RandomPerson object. By default
+Data::RandomPerson::Names::{Male,Female,Last} 
+are used to supply the male, female and last names. To pass in other
+classes to use you just put male => 'MyNames::Male' as arguments to 
+the method. 
+The three keys are 'male', 'female', and 'last'.
 
 =back
 
@@ -221,38 +223,46 @@ method. The three keys are 'male', 'female', and 'last'.
 
 =item _pick_gender( )
 
-Returns 'm' or 'f' with equal probability. This can be overridden to adjust the ratio on males to females in your target population.
+Returns 'm' or 'f' with equal probability. This can be overridden
+to adjust the ratio on males to females in your target population.
 
 =item _pick_age( )
 
-Returns an age between 1 and 100. This can be overridden to return values in the range required of your target population.
+Returns an age between 1 and 100. This can be overridden to return
+values in the range required of your target population.
 
 =item _pick_dob( )
 
-Calculates the date of birth from the age in the format YYYY-MM-DD. The YYYY value is the current year less the age, MM and DD and random, valid, values. This method should not need to be overridden unless the date format is not what you require.
+Calculates the date of birth from the age in the format
+YYYY-MM-DD. The YYYY value is the current year minus the age, MM and
+DD and random, valid, values. This method should not need to be
+overridden unless the date format is not what you require.
 
 =item _pick_title( )
 
-Return a suitable title based on the age and gender of the person. The ratios used here are completely made up and until I can get hold of some hard data, like a copy of the electoral roll, it can only be a best guess.
+Return a suitable title based on the age and gender of the person.
+The ratios used here are completely made up and until I can get hold
+of some hard data, like a copy of the electoral roll, it can only be
+a best guess.
 
 =item _pick_lastname( )
 
-Returns a last name from the class loaded by the init() method. You should not need to override this method.
+Returns a last name from the class loaded by the init() method. You
+should not need to override this method.
 
 =item _pick_firstname( )
 
-Returns a first name of the correct gender from the class loaded by the init() method. You should not need to override this method.
+Returns a first name of the correct gender from the class loaded by the
+init() method. You should not need to override this method.
 
 =item create( )
 
-Returns a newly created person as a hash reference with the following keys: gender, age, dob, firstname, lastname and title. A new
-person is returned for each call of the method although there is no guarantee of uniqueness.
+Returns a newly created person as a hash reference with the following
+keys: gender, age, dob, firstname, lastname and title. A new person is 
+returned for each call of the method although there is no guarantee of
+uniqueness.
 
 =back
-
-=head1 ENVIRONMENT
-
-Perl 5
 
 =head1 DIAGNOSTICS
 
@@ -260,22 +270,16 @@ Perl 5
 
 =item Unknown argument 'XXX' passed to new
 
-There are only three arguments that can be optionally passed to new. These are 'male', 'female' and 'last' and they
-should be the classes that will be used to get the male, female and last names.
+There are only three arguments that can be optionally passed to new. These
+are 'male', 'female' and 'last' and they should be the classes that will be
+used to get the male, female and last names.
 
 =item Unable to load 'XXX': ...
 
-A class given to load instead of the default class could not be loaded. Hopefully a sensible reason will be given.
+A class given to load instead of the default class could not be loaded.
+Hopefully a sensible reason will be given.
 
 =back
-
-=head1 BUGS
-
-None so far
-
-=head1 FILES
-
-None
 
 =head1 SEE ALSO
 
@@ -287,127 +291,65 @@ A simple class for selecting elements from a weighted list
 
 =item Data::RandomPerson::Names::Female
 
-A list of female first names from census data
-
 =item Data::RandomPerson::Names::Last
-
-A list of last names from census data
 
 =item Data::RandomPerson::Names::Male
 
-A list of male first names from census data
-
 =item Data::RandomPerson::Names::AncientGreekFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::AncientGreekMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::ArabicFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::ArabicLast
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::ArabicMale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::BasqueFemale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::BasqueMale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::CelticFemale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::CelticMale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::EnglishFemale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::EnglishLast
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::EnglishMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::HindiFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::HindiMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::JapaneseFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::JapaneseMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::LatvianFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::LatvianMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::ModernGreekFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::ModernGreekLast
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::ModernGreekMale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::SpanishFemale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::SpanishLast
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::SpanishMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::ThaiFemale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =item Data::RandomPerson::Names::ThaiMale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::VikingFemale
 
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
-
 =item Data::RandomPerson::Names::VikingMale
-
-Names from Chris Pound's language machine page at http://www.ruf.rice.edu/~pound/#scripts
 
 =back
 
@@ -417,6 +359,9 @@ Peter Hickman (peterhi@ntlworld.com)
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005, Peter Hickman. All rights reserved. This module is
-free software. It may be used, redistributed and/or modified under the
+Copyright (c) 2005, Peter Hickman. 
+
+Copyright (c) 2014, Michiel Beijen.
+
+This module is free software. It may be used, redistributed and/or modified under the
 same terms as Perl itself.
