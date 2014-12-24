@@ -6,7 +6,7 @@ use warnings;
 use Data::Random qw(rand_date);
 use Data::RandomPerson::Choice;
 
-our $VERSION = '0.50';
+our $VERSION = '0.51';
 
 sub new {
     my ( $class, %args ) = @_;

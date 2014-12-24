@@ -3,6 +3,29 @@ package Data::RandomPerson::Names;
 use strict;
 use warnings;
 
+use Data::RandomPerson::Choice;
+use File::Share ':all';
+
+sub new {
+    my ($class) = @_;
+
+    my $self = bless {}, $class;
+
+    $self->{choice} = Data::RandomPerson::Choice->new();
+
+    my $module = (split /::/, $class)[-1];
+
+    my $file = dist_file ('Data-RandomPerson', $module . '.txt');
+    open ( my $fh, '< :encoding(UTF8)', $file) or die "Can't open '$file': $!";
+    my @file = <$fh>;
+    close $fh;
+
+    chomp (@file);
+    $self->{choice}->add_list(@file);
+
+    return $self;
+}
+
 sub size {
     my ($self) = @_;
 

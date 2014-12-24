@@ -1,6 +1,12 @@
 Revision history for perl module Data::RandomPerson
 
-0.50 2013-??-??
+0.51 2014-12-24
+ - Changed __DATA__ sections to File::ShareDir because of problems
+   with preloading and DuckDuckGo!
+   See https://github.com/duckduckgo/zeroclickinfo-goodies/issues/857
+
+0.50 2014-12-17
+ - Changed name lists to __DATA__ sections for smaller module size.
  - Moved dist to Dist::Zilla & git.
  - Moved dependency on Date::Calc to Data::Random for Date of Birth
    generation.

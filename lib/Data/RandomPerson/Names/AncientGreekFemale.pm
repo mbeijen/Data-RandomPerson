@@ -5,23 +5,6 @@ use warnings;
 
 use base 'Data::RandomPerson::Names';
 
-use Data::RandomPerson::Choice;
-
-sub new {
-    my ($class) = @_;
-
-    my $self = bless {}, $class;
-
-    $self->{choice} = Data::RandomPerson::Choice->new();
-
-    my @names = <DATA>;
-    close DATA;
-    chomp (@names);
-    $self->{choice}->add_list(@names);
-
-    return $self;
-}
-
 1;
 
 =pod
@@ -81,81 +64,3 @@ same terms as Perl itself.
 
 =cut
 
-__DATA__
-actaia
-actoris
-aegialeia
-aerope
-aethra
-aethylla
-aganippe
-aglaia
-alcimede
-amphinome
-anticlea
-arne
-astynome
-astyoche
-autolye
-callianeira
-canache
-chione
-chloe
-circe
-clytemnestra
-clytie
-creusa
-cymodece
-danae
-daphne
-deianara
-deidameia
-dirce
-dynamene
-eidyia
-eriphyle
-eurynome
-galatea
-halia
-helen
-hesione
-hiera
-ianassa
-iaria
-leda
-leucippe
-limnoraea
-maera
-mante
-meda
-melantho
-melite
-metaneira
-nacippe
-nemertes
-nesaea
-orithyia
-otionia
-panope
-penthesilia
-periboea
-perimede
-periopis
-pero
-pherusa
-philomele
-polymede
-polymele
-polypheme
-polyxena
-prote
-protogoria
-scarphe
-sibyl
-speio
-tecmessa
-thaleia
-theano
-thoe
-xanthippe
-xenoclea

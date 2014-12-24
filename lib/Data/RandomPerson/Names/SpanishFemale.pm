@@ -5,23 +5,6 @@ use warnings;
 
 use base 'Data::RandomPerson::Names';
 
-use Data::RandomPerson::Choice;
-
-sub new {
-    my ($class) = @_;
-
-    my $self = bless {}, $class;
-
-    $self->{choice} = Data::RandomPerson::Choice->new();
-
-    my @names = <DATA>;
-    close DATA;
-    chomp (@names);
-    $self->{choice}->add_list(@names);
-
-    return $self;
-}
-
 1;
 
 =pod
@@ -81,82 +64,3 @@ same terms as Perl itself.
 
 =cut
 
-__DATA__
-agueda
-aldonza
-ana
-angelina
-antonia
-barbola
-bartolomeba
-beatriz
-belit
-bernardina
-berta
-blanca
-bona
-catalina
-clara
-clarencia
-columba
-constanza
-cristina
-domenga
-eldonza
-elena
-elo
-elvira
-enderquina
-ermengarda
-ermesinda
-estefania
-eva
-fafila
-fatima
-felipa
-florinda
-francisca
-fronilde
-gelvira
-gotina
-gracia
-gundisalba
-guntroda
-ildaria
-ines
-isabel
-isabelica
-isabella
-jimena
-juana
-leonor
-lucia
-luisa
-lupa
-madelena
-mafalda
-maneula
-mansuara
-margarita
-maria
-mariana
-marina
-marinella
-mayor
-mencia
-paterna
-placia
-sancha
-scemena
-serena
-taresa
-tegrida
-teoda
-teresa
-toda
-urraca
-velasquita
-victoria
-violante
-yolande
-ysabel
