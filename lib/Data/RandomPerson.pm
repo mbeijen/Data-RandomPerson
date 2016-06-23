@@ -5,6 +5,7 @@ use warnings;
 
 use Data::Random qw(rand_date);
 use Data::RandomPerson::Choice;
+use Module::Find;
 
 our $VERSION = '0.51';
 
@@ -18,11 +19,13 @@ sub new {
     ## and see if they are being overwritten
     ##
 
-    my $male_class   = 'Data::RandomPerson::Names::Male';
-    my $female_class = 'Data::RandomPerson::Names::Female';
-    my $last_class   = 'Data::RandomPerson::Names::Last';
+    my $base_class = 'Data::RandomPerson::Names';
 
-    foreach my $key ( keys %args ) {
+    my $male_class   = $base_class . '::Male';
+    my $female_class = $base_class . '::Female';
+    my $last_class   = $base_class . '::Last';
+
+    foreach my $key ( sort keys %args ) {
         if ( lc $key eq 'male' ) {
             $male_class = $args{$key};
             delete( $args{$key} );
@@ -34,6 +37,11 @@ sub new {
         elsif ( lc $key eq 'last' ) {
             $last_class = $args{$key};
             delete( $args{$key} );
+        }
+        elsif ($key eq 'type') {
+            $male_class   = $base_class . '::' . $args{$key} . 'Male';
+            $female_class = $base_class . '::' . $args{$key} . 'Female';
+            $last_class   = $base_class . '::' . $args{$key} . 'Last';
         }
         else {
             die "Unknown argument '$key' passed to new";
@@ -145,6 +153,20 @@ sub create {
     return { dob => $self->{dob}, gender => $self->{gender}, age => $self->{age}, firstname => $self->{firstname}, lastname => $self->{lastname}, title => $self->{title} };
 }
 
+sub available_types {
+    my @backends = sort { $a cmp $b } findsubmod Data::RandomPerson::Names;
+    my %backends = map {$_ => 1} @backends;
+    my @available;
+    for my $backend (grep {/Last$/} @backends) {
+        if ($backend =~ /::(\w+)Last$/) {
+            next if !$backends{'Data::RandomPerson::Names::' . $1 . 'Female'};
+            next if !$backends{'Data::RandomPerson::Names::' . $1 . 'Male'};
+            push @available, $1;
+        }
+    }
+    return @available;
+}
+
 1;
 
 __END__
@@ -158,8 +180,8 @@ Data::RandomPerson - Create random person data.
   use Data::RandomPerson;
 
   my $r = Data::RandomPerson->new();
-
   my $p = $r->create();
+  print $p->{firstname}, ' ', $p->{lastname}, "\n";
 
 =head1 DESCRIPTION
 
@@ -206,14 +228,30 @@ The person's title based on their age and gender.
 
 =over 4
 
-=item new( HASH )
+=item new(%options)
 
 Create the Data::RandomPerson object. By default
-Data::RandomPerson::Names::{Male,Female,Last} 
-are used to supply the male, female and last names. To pass in other
-classes to use you just put male => 'MyNames::Male' as arguments to 
-the method. 
-The three keys are 'male', 'female', and 'last'.
+Data::RandomPerson::Names::{Male,Female,Last}
+are used to supply the male, female and last names.
+
+If you want to generate names from a specific type, you can use the 'type'
+parameter like this:
+
+    my $r = Data::RandomPerson->new(type => 'Spanish');
+
+The list of available types is obtained by calling available_types().
+Only name lists that have collections for female, male and last names can
+be specified here.
+
+You can also choose to override the classes for last names, female or male
+names. To do that, use the keys 'female', 'male', and 'last'.
+Please note that in this case you need to specify the FULL class name.
+For instance to create persons using a Celtic first name, use:
+
+    my $r = Data::RandomPerson->new(
+        female => 'Data::RandomPerson::Names::CelticFemale',
+        male   => 'Data::RandomPerson::Names::CelticMale',
+    );
 
 =back
 
@@ -221,46 +259,53 @@ The three keys are 'male', 'female', and 'last'.
 
 =over 4
 
-=item _pick_gender( )
+=item _pick_gender()
 
 Returns 'm' or 'f' with equal probability. This can be overridden
 to adjust the ratio on males to females in your target population.
 
-=item _pick_age( )
+=item _pick_age()
 
 Returns an age between 1 and 100. This can be overridden to return
 values in the range required of your target population.
 
-=item _pick_dob( )
+=item _pick_dob()
 
 Calculates the date of birth from the age in the format
 YYYY-MM-DD. The YYYY value is the current year minus the age, MM and
 DD and random, valid, values. This method should not need to be
 overridden unless the date format is not what you require.
 
-=item _pick_title( )
+=item _pick_title()
 
 Return a suitable title based on the age and gender of the person.
 The ratios used here are completely made up and until I can get hold
 of some hard data, like a copy of the electoral roll, it can only be
 a best guess.
 
-=item _pick_lastname( )
+=item _pick_lastname()
 
 Returns a last name from the class loaded by the init() method. You
 should not need to override this method.
 
-=item _pick_firstname( )
+=item _pick_firstname()
 
 Returns a first name of the correct gender from the class loaded by the
 init() method. You should not need to override this method.
 
-=item create( )
+=item create()
 
 Returns a newly created person as a hash reference with the following
-keys: gender, age, dob, firstname, lastname and title. A new person is 
+keys: gender, age, dob, firstname, lastname and title. A new person is
 returned for each call of the method although there is no guarantee of
 uniqueness.
+
+=item available_types()
+
+Returns the list of available name types. These are the types you can request
+in a call to new(). Usage:
+
+    my @types = Data::RandomPerson::available_types();
 
 =back
 
@@ -281,85 +326,13 @@ Hopefully a sensible reason will be given.
 
 =back
 
-=head1 SEE ALSO
-
-=over 4
-
-=item Data::RandomPerson::Choice
-
-A simple class for selecting elements from a weighted list
-
-=item Data::RandomPerson::Names::Female
-
-=item Data::RandomPerson::Names::Last
-
-=item Data::RandomPerson::Names::Male
-
-=item Data::RandomPerson::Names::AncientGreekFemale
-
-=item Data::RandomPerson::Names::AncientGreekMale
-
-=item Data::RandomPerson::Names::ArabicFemale
-
-=item Data::RandomPerson::Names::ArabicLast
-
-=item Data::RandomPerson::Names::ArabicMale
-
-=item Data::RandomPerson::Names::BasqueFemale
-
-=item Data::RandomPerson::Names::BasqueMale
-
-=item Data::RandomPerson::Names::CelticFemale
-
-=item Data::RandomPerson::Names::CelticMale
-
-=item Data::RandomPerson::Names::EnglishFemale
-
-=item Data::RandomPerson::Names::EnglishLast
-
-=item Data::RandomPerson::Names::EnglishMale
-
-=item Data::RandomPerson::Names::HindiFemale
-
-=item Data::RandomPerson::Names::HindiMale
-
-=item Data::RandomPerson::Names::JapaneseFemale
-
-=item Data::RandomPerson::Names::JapaneseMale
-
-=item Data::RandomPerson::Names::LatvianFemale
-
-=item Data::RandomPerson::Names::LatvianMale
-
-=item Data::RandomPerson::Names::ModernGreekFemale
-
-=item Data::RandomPerson::Names::ModernGreekLast
-
-=item Data::RandomPerson::Names::ModernGreekMale
-
-=item Data::RandomPerson::Names::SpanishFemale
-
-=item Data::RandomPerson::Names::SpanishLast
-
-=item Data::RandomPerson::Names::SpanishMale
-
-=item Data::RandomPerson::Names::ThaiFemale
-
-=item Data::RandomPerson::Names::ThaiMale
-
-=item Data::RandomPerson::Names::VikingFemale
-
-=item Data::RandomPerson::Names::VikingMale
-
-=back
-
 =head1 AUTHOR
 
 Peter Hickman (peterhi@ntlworld.com)
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005, Peter Hickman. 
+Copyright (c) 2005, Peter Hickman.
 
 Copyright (c) 2014, Michiel Beijen.
 

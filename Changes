@@ -2,6 +2,7 @@ Revision history for perl module Data::RandomPerson
 
 0.52 2016-06-23
  - Depend on Data::Random 0.12 so we no longer need Date::Calc
+ - Add available_types() call to request available name backends
 
 0.51 2014-12-24
  - Changed __DATA__ sections to File::ShareDir because of problems

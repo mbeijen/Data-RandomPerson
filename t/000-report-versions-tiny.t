@@ -56,6 +56,7 @@ eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('IO::Handle','any version') };
 eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('List::Util::WeightedChoice','0.06') };
+eval { $v .= pmver('Module::Find','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Time::Local','1.18') };
 

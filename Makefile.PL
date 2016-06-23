@@ -22,6 +22,7 @@ WriteMakefile (
     "Data::Random" => "0.12",
     "List::Util::WeightedChoice" => "0.06",
     "File::Share" => "0.06",
+    "Module::Find" => 0,
   },
   TEST_REQUIRES => {
     "File::Spec" => 0,
