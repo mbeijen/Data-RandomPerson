@@ -48,8 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
-eval { $v .= pmver('Data::Random','any version') };
-eval { $v .= pmver('Date::Calc','any version') };
+eval { $v .= pmver('Data::Random','0.12') };
 eval { $v .= pmver('ExtUtils::MakeMaker','any version') };
 eval { $v .= pmver('File::Share','any version') };
 eval { $v .= pmver('File::ShareDir::Install','0.06') };

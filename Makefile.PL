@@ -19,8 +19,7 @@ WriteMakefile (
   LICENSE          => 'perl',
   MIN_PERL_VERSION => '5.008007',
   PREREQ_PM => {
-    "Data::Random" => 0,
-    "Date::Calc" => 0,
+    "Data::Random" => "0.12",
     "File::Share" => "0.06",
   },
   TEST_REQUIRES => {
