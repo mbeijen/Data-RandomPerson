@@ -4,6 +4,8 @@ Revision history for perl module Data::RandomPerson
  - Depend on Data::Random 0.12 so we no longer need Date::Calc
  - Add available_types() call to request available name backends
  - Add lists of Dutch names
+ - Add scripts/randompersonlist.pl to quickly generate lists of
+   names.
 
 0.51 2014-12-24
  - Changed __DATA__ sections to File::ShareDir because of problems
