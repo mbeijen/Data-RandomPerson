@@ -20,6 +20,7 @@ WriteMakefile (
   MIN_PERL_VERSION => '5.008007',
   PREREQ_PM => {
     "Data::Random" => "0.12",
+    "List::Util::WeightedChoice" => "0.06",
     "File::Share" => "0.06",
   },
   TEST_REQUIRES => {

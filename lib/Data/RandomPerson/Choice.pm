@@ -3,6 +3,8 @@ package Data::RandomPerson::Choice;
 use strict;
 use warnings;
 
+use List::Util::WeightedChoice qw(choose_weighted);
+
 sub new {
     my ($class) = @_;
 
@@ -14,14 +16,16 @@ sub add {
 
     $count ||= 1;
 
-    push @{ $self->{data} }, $value foreach ( 1 .. $count );
-    $self->{size} += $count;
+    push @{ $self->{data} }, $value;
+    push @{ $self->{weight} }, $count;
+    $self->{size}++;
 }
 
 sub add_list {
     my ( $self, @list ) = @_;
 
     push @{ $self->{data} }, @list;
+    push @{ $self->{weight} }, 1 for 1..scalar(@list);
     $self->{size} += scalar(@list);
 }
 
@@ -36,7 +40,7 @@ sub pick {
 
     die "No data has been added to the list" unless $self->{size};
 
-    return $self->{data}[ int( rand( $self->{size} ) ) ];
+    return choose_weighted($self->{data}, $self->{weight});
 }
 
 1;
@@ -68,7 +72,7 @@ Data::RandomPerson::Choice - Select an element from a list in proportion
 
 =head2 Overview
 
-A way of simply defining the probablity of a selection of values based 
+A way of simply defining the probability of a selection of values based
 on the ratio of the elements this add( 'this' ) adds one element to the
 list, the count argument of add defaults to 1. add( 'that', 11 ) adds
 another 11 elements to the list giving a total of 12. The chance of
@@ -80,7 +84,7 @@ You can add as many values as you like to the list.
 
 =over 4
 
-=item Data::RandomPerson::Choice->new( )
+=item Data::RandomPerson::Choice->new()
 
 Returns a Data::RandomPerson::Choice object.
 
@@ -98,7 +102,7 @@ Adds VALUE to the list COUNT times, if COUNT is omitted it will default to 1.
 
 Adds a LIST of items to the data
 
-=item size( )
+=item size()
 
 Returns the size of the list so far
 
