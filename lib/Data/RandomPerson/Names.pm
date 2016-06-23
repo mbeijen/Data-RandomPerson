@@ -35,7 +35,7 @@ sub size {
 sub get {
     my ($self) = @_;
 
-    return ucfirst $self->{choice}->pick();
+    return $self->{choice}->pick();
 }
 
 1;
