@@ -7,7 +7,7 @@ use Data::Random qw(rand_date);
 use Data::RandomPerson::Choice;
 use Module::Find;
 
-our $VERSION = '0.51';
+our $VERSION = '0.60';
 
 sub new {
     my ( $class, %args ) = @_;
